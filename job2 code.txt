@@ -1,0 +1,15 @@
+sudo cp -v -r -f * /mainenv/
+
+#!/bin/bash
+
+if sudo docker ps | grep mainos
+
+then
+
+echo "already running"
+
+else
+
+sudo docker run --name mainos -dit -p 8082:80 -v /mainenv:/usr/local/apache2/htdocs/ httpd
+
+fi

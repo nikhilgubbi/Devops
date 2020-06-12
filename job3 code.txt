@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+if sudo docker ps | grep testenv
+then
+sudo docker rm -f testenv
+else
+echo "container removed"
+fi

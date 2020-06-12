@@ -1,0 +1,11 @@
+
+sudo cp -v -r -f * /testing
+#!/bin/bash
+
+
+if sudo docker ps | grep testenv
+then
+echo "already running"
+else
+sudo docker run --name testenv -dit -p 8081:80  -v /testing:/usr/local/apache2/htdocs/  httpd
+fi
